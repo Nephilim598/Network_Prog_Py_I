@@ -1,0 +1,121 @@
+Python alapok
+Határidő: 2023. szeptember 27. 17:00
+Utasítások
+A feladata osztályzat jár, jegyzetek használhatóak.
+
+Töltsön fel 10 véletlen (1 és 100 között) egész számból egy tömböt (listát).
+
+Írassa ki a tömbben szereplő számok közül a legnagyobb számot.
+
+Válogassa szét, és írja ki a tömb elemeit (páros/páratlan)
+
+Kérjen be egy számot és írja ki , kisebb-e 10-nél
+
+Írassa ki a tömb páros elemeit.
+
+Hozz létre egy saját tömböt, választott mennyiségű elemmel. Írjon egy programot, ami megszámolja, hány darab elem szerepel ebben a tömbben.
+Hány 30-nál nagyobb elem van a tömbben?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ilyesmi:
+
+
+from random import *
+
+lista=[]
+
+
+# Töltsön fel 10 véletlen (1 és 100 között) egész számból egy tömböt (listát).
+def f01():
+    rszam = randint(1,101)
+    for i in range(10):
+        lista.append(rszam)
+        rszam = randint(1,101)
+
+# Írassa ki a tömbben szereplő számok közül a legnagyobb számot.
+def f02():
+    y = lista[0]
+    for i in range(len(lista)):
+        x = lista[i]
+        if x > y:
+          x = y
+
+    print(x)
+
+# Válogassa szét, és írja ki a tömb elemeit (páros/páratlan)
+def f03():
+    for i in range(len(lista)):
+        if lista[i] % 2 == 0:
+            print("páros =",i)
+
+    for i in range(len(lista)):
+        if lista[i] % 2 == 1:
+            print("páratlan =",i)
+
+# Kérjen be egy számot és írja ki , kisebb-e 10-nél
+def f04():
+    x = input("Kérek egy számot: ")
+    if x < 10:
+        print("Kisebb 10-nél")
+    elif x > 10:
+        print("Nagyobb 10-nél")
+    else:
+        print("Számot kérek!")
+
+
+# Hozz létre egy saját tömböt, választott mennyiségű elemmel. Írjon egy programot, ami megszámolja, hány darab elem szerepel ebben a tömbben.
+#Hány 30-nál nagyobb elem van a tömbben?
+def f05():
+    x = 0
+    listam=[]
+    x = input("Kérek egy számot (min): ")
+    y = input("Kérek egy számot (max): ")
+    szam = randint(1,101)
+    for i in range(x,y):
+        listam.append(szam)
+        szam = randint(1,101)
+    listam.sort()
+    for i in range(len(listam)):
+        if listam[i] > 30:
+            x + 1
+    print(x," 30-nál nagyobb elem van a tömbben.")
+
+
+
+
+
+def main():
+    f01()
+    f02()
+    f03()
+    f04()
+    f05()
+
+
+main()
+
+
+
+
